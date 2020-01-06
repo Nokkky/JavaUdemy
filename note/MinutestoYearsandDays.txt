@@ -1,0 +1,25 @@
+public static void printYearsAndDays(long minutes){
+
+        if (minutes < 0){
+           System.out.println( "Invalid Value");
+        }
+
+        long hours = minutes / 60;
+        long days = hours / 24;
+        long remainDays = days % 365;
+        long years = days / 365;
+
+        String yearString = year + "y";
+        if (years < 10){
+            yearString = "0" + yearString;
+        }
+
+        String dayString = remainDays + "d";
+        if (days < 10){
+            dayString = "0" + dayString;
+        }
+
+        String results = minutes + "min = " + yearString + " and " + dayString;
+
+        System.out.println(result);
+    }
