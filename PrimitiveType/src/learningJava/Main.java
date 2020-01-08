@@ -402,7 +402,8 @@ public class Main {
 //  private static final String  INVALID_VALUE_MESSAGE = "Invalid value";
 //  -- can not be changed once assigned.
 //
-//
+// Switch
+//  -- Used for testing value of variables.
 //
 //
 // ***** Git learning *****
