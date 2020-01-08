@@ -1,0 +1,19 @@
+public class EvenDigitSum {
+    // write your code here
+    public static int getEvenDigitSum(int number){
+	if(number < 0){
+		return -1;
+	}
+	// get the last digit;
+	// if the last digit is even number, add to result;
+	int evenDigitSum = 0;
+	while(number != 0){
+	    int remainder = number % 10;
+	    number = number / 10;
+	    if(remainder % 2 == 0){
+	        evenDigitSum += remainder;
+	    }
+	}
+	return evenDigitSum;
+}
+}

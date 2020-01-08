@@ -1,0 +1,24 @@
+public static int getEventDigitSum(int number){
+	if(number < 0){
+		return -1;
+	}
+	// judge whether this digit is at even position;
+	// get even digit and add to result;
+	// until number != 0
+
+	int evenDigitSum = 0;
+	int evenPosition = 1;
+	while(number != 0){
+		if(evenPosition % 2 != 0){
+			number = number / 10;
+			evenPosition++;
+			continue;
+		}else{
+			int remainder = number % 10;
+			number = number / 10;
+			evenDigitSum += remainder;
+			evenPosition++;
+		}
+	}
+	return evenDigitSum;
+}

@@ -1,0 +1,20 @@
+    private static boolean numberPalindrome(int number){
+        // create a new number to store reversed number
+        int reversedNum = 0;
+        // store the original number;
+        int originalNum = number;
+        while(originalNum != 0) {
+            // get the remainder of original number
+            int remainder = originalNum % 10;
+            // add the remainder to reversed number
+            reversedNum = reversedNum * 10 + remainder;
+            // remove the last digit number
+            originalNum = originalNum / 10;
+        }
+        // compare the reserved number with original number
+        if (number == reversedNum){
+            return true;
+        }else{
+            return false;
+        }
+    }
