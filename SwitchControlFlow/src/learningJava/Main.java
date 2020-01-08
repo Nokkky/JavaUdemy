@@ -22,6 +22,8 @@ public class Main {
         }
         forStatement();
         whileStatement();
+        sumDigits(10);
+        System.out.println("Is palindrome: " + numberPalindrome(-0));
     }
     public static void forStatement(){
         for(int i = 0; i < 5; i++){
@@ -51,6 +53,62 @@ public class Main {
             count ++;
         }while(count != 6);
     }
+
+    private static int sumDigits(int number){
+        int sum = 0;
+        if (number < 10){
+            System.out.println("sumDigits: invalid number.");
+            return -1;
+        }else {
+            while (number > 0) {
+                // get the lest-significant digit;
+                sum = sum + (number % 10);
+                // drop the least-significant digit;
+                number = number / 10;
+            }
+        }
+        System.out.println("sumDigits: " + sum);
+        return sum;
+    }
+
+    private static boolean numberPalindrome(int number){
+        // create a new number to store reversed number
+        int reversedNum = 0;
+        // store the original number;
+        int originalNum = number;
+        while(originalNum != 0) {
+            // get the remainder of original number
+            int remainder = originalNum % 10;
+            // add the remainder to reversed number
+            reversedNum = reversedNum * 10 + remainder;
+            // remove the last digit number
+            originalNum = originalNum / 10;
+        }
+        // compare the reserved number with original number
+        if (number == reversedNum){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public static int sumFirstAndLastDigit(int number){
+        // get the last digit;
+        if(number == 0){
+            return 0;
+        }
+        int lastDigit = number % 10;
+
+        // get the first digit;
+        int firstDigit = 0;
+        while(number != 0){
+            firstDigit = number % 10;
+            number = number / 10;
+        }
+        // sum together;
+        int sum = firstDigit + lastDigit;
+        return sum;
+    }
 }
 // Switch variable can be int, string, char.
 //
@@ -58,6 +116,16 @@ public class Main {
 //  -- for(init statement; termination statement; increment statement)
 //
 //  isPrime(i)
-//   -- can be used to judge whether number i is prime number.
+//  -- can be used to judge whether number i is prime number.
 //  (long) Math.sqrt(n)
 //  (long) Math.sqare(n)
+// while statement
+//  -- while (condition) {
+//      if (condition) {
+//          process;
+//          continue;  // skip some step;
+//      }
+//      if(condition){
+//          break;
+//      }
+//  }
