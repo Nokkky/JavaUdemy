@@ -1,0 +1,24 @@
+    private static void MinAndMaxInputChallenge(){
+
+        int maxNum = Integer.MIN_VALUE;
+        int minNum = Integer.MAX_VALUE;
+		
+	  Scanner input = new Scanner(System.in);
+        
+	  System.out.println("Please Enter number: ");
+	  
+	  boolean hasNextInt = input.hasNextInt();
+	  
+	  while(hasNextInt){
+	  
+	  	int userInput = input.nextInt();
+	  	if (userInput < minNum){
+			minNum = userInput;
+	  	}
+	  	if (userInput > maxNum){
+	  		maxNum = userInput;
+	  	}
+	  }
+	  System.out.println("Max input number is " + maxNum + " Min input number is " + minNum);
+	  input.close();
+    }

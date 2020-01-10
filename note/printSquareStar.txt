@@ -1,17 +1,3 @@
-package learningJava;
-
-public class Main {
-
-    public static void main(String[] args) {
-	// write your code here
-
-        String numberAsInteger = "2018";
-        System.out.println("numberAsString: " + numberAsInteger);
-        int number = Integer.parseInt(numberAsInteger);
-        System.out.println("Number equal: " + number);
-        printSquareStar(5);
-    }
-
     public static void printSquareStar(int number){
         if (number < 5){
             System.out.println("Invalid Value");
@@ -34,14 +20,3 @@ public class Main {
             }
         }
     }
-
-}
-// Integer.parseInt(numberAsString)
-//  -- input String should only contain number.
-//  -- Successful parse String as number.
-//  -- Fail will get error.
-//
-// Double.parseDouble(doubleAsString)
-//
-//
-//
