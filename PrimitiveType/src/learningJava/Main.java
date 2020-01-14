@@ -346,6 +346,8 @@ public class Main {
 //   -- Can contain a sequence of characters.
 //   -- 2.14 billion (max_value of int)
 //      String + Number ( Int/double -> String )
+//   -- String.toLowerCase();
+//   -- Integer.parseInt(numberAsInteger)
 //
 // Operand
 //  -- object that is manipulated by an operator.
@@ -449,5 +451,3 @@ public class Main {
 // One useful tutorial https://www.vogella.com/tutorials/Git/article.html
 //
 //
-//aaaaaaadfsfsfsd
-// I add some changes at sub-folders and test.
