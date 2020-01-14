@@ -18,7 +18,12 @@ public class Kitchen {
     public Kitchen(Microwave microwave, Oven oven, int numberOfKitchen) {
         this.microwave = microwave;
         this.oven = oven;
-        this.numberOfKitchen = numberOfKitchen;
+
+        if (numberOfKitchen > 0){
+            this.numberOfKitchen = numberOfKitchen;
+        }else{
+            this.numberOfKitchen = 1;
+        }
     }
 
     public int getKitchenNumber(){

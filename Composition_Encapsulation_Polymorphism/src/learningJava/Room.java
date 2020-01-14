@@ -22,8 +22,9 @@ public class Room {
         return bedroom;
     }
 
-    public LivingRoom getLivingroom() {
-        System.out.println("Livingroom of Room");
+    public LivingRoom getLivingRoom() {
+        System.out.println("Living room of Room");
+        livingroom.getNumberOfLivingRoom();
         return livingroom;
     }
 }
