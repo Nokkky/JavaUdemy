@@ -4,7 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
 //        practiceOfComposition();
-        practiceOfEncapsulation();
+//        practiceOfEncapsulation();
+        practiceOfPolymorphism();
     }
 
     public static void practiceOfComposition(){
@@ -63,4 +64,86 @@ public class Main {
         myPrinter.fillUpToner(110);
         System.out.println("FillUpToner to: " + myPrinter.getTonerLevel());
     }
+
+    public static void practiceOfPolymorphism(){
+
+        Honda myHonda = new Honda();
+        myHonda.brake();
+
+        BMW myBMW = new BMW();
+        myBMW.brake();
+        myBMW.startEngine();
+    }
+}
+
+class Car{
+    private String name;
+    private int cylinder;
+    private int wheels;
+    private boolean engine;
+
+
+    public Car(int cylinder, String name){
+        this.cylinder = cylinder;
+        this.name = name;
+        this.wheels = 4;
+        this.engine = true;
+    };
+
+    public String getName() {
+        return name;
+    }
+
+    public int getCylinder() {
+        return cylinder;
+    }
+
+    public int getWheels() {
+        return wheels;
+    }
+
+    public boolean isEngine() {
+        return engine;
+    }
+
+    public void startEngine(){
+        System.out.println("Start engine in Car");
+        this.engine = true;
+    }
+
+    public void brake(){
+        System.out.println("Car().braking");
+    }
+}
+
+class Honda extends Car{
+
+    public Honda() {
+        super(4,"Honda");
+    }
+
+    @Override
+    public void startEngine() {
+        System.out.println("Start engine in Honda.");
+//        super.startEngine();
+    }
+
+    @Override
+    public void brake() {
+        System.out.println("Brake at Honda");
+//        super.brake();
+    }
+}
+
+class BMW extends Car{
+
+    public BMW() {
+        super(4,"BMW");
+    }
+
+    @Override
+    public void startEngine() {
+        System.out.println("Start engine in BMW.");
+    }
+
 }
