@@ -5,10 +5,11 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
 
-        MinimumElementChallenge challenge = new MinimumElementChallenge();
+//        MinimumElementChallenge challenge = new MinimumElementChallenge();
+//        challenge.main();
 
-        challenge.main();
-
+        ReverseChallenge reverseChallenge = new ReverseChallenge();
+        reverseChallenge.main();
     }
 
 }
