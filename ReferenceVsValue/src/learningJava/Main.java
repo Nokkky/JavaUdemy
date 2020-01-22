@@ -21,6 +21,6 @@ public class Main {
 //  -- when we reinitialize the variable, we assigned new address to that variable.
 //  -- class, array
 //
-//  object == new int[5]
-//  variable == int[] nameOfVariable
+//  object : new int[5]
+//  variable : int[] nameOfVariable
 //
