@@ -5,37 +5,91 @@ public class BinarySearch {
     /** HashSet space complexity is high**/
 
     public static void main(String[] arg){
-        int[] array = {3,4,5,8,8,8,8,10,13,14};
-        int target = 8;
+        int[] array = {4};
+        int target = 3;
+        System.out.println(findPosition(array, target));
+    }
+    /** return random posotion of target number **/
+    public static int findPosition(int[] nums, int target) {
+        // write your code here
+        if (nums == null) return -1;
+        if (nums.length == 0) return -1;
 
-//        int result = binarySearchRecursion(array, 0, array.length - 1, target);
-//        if (array[result] == target){
-//            System.out.println("Find target number at " + result);
-//        }else {
-//            System.out.println("Not find.");
-//        }
+        int start = 0, end = nums.length - 1;
 
-        System.out.println(binarySearch(array,target));
+        while( end - start >= 2){
 
+            // find the middle position Number
+            int mid = start + (end - start)/2; // start < mid < end;
+
+            if (nums[mid] == target){
+                return mid;
+            }
+            if(nums[mid] < target){
+                start = mid;
+            }
+            if(nums[mid] > target){
+                end = mid;
+            }
+        }
+
+        if(nums[start] == target){
+            return start;
+        }
+        if(nums[end] == target){
+            return end;
+        }
+        return -1;
+    }
+    /** return last position of target number **/
+    public int lastPosition(int[] nums, int target) {
+        // write your code here
+        if (nums == null) return -1;
+        if (nums.length == 0) return -1;
+
+        int start = 0, end = nums.length - 1;
+        while(end - start >= 2){
+            int mid = start + (end - start)/2; // start < mid < end;
+            if (nums[mid] > target){
+                end = mid;
+            }else{
+                start = mid;
+            }
+        }
+        if (nums[end] == target){
+            return end;
+        }
+        if (nums[start] == target){
+            return start;
+        }
+        return -1;
     }
 
-    public static int binarySearchRecursion(int[] array, int start, int end, int target){
-        if (start > end){
+    /** return first position of target number **/
+    // similar to lastPosition.
+
+    /** Recursion version of binarySearch **/
+    public static int binarySearchRecursion(int[] nums, int start, int end, int target){
+        if (end - start < 2){
+            if (nums[end] == target){
+                return end;
+            };
+            if(nums[start] == target){
+                return start;
+            }
             return -1;
         }
         int mid = start + (end - start)/2;
-        if (array[mid] == target){
-            return mid;
+
+        if (nums[mid] > target){
+            end = mid;
+        }else{
+            start = mid;
         }
-        if (array[mid] < target){
-            start = mid + 1;
-        }
-        if (array[mid] > target){
-            end = mid - 1;
-        }
-        return binarySearchRecursion(array, start, end, target);
+        return binarySearchRecursion(nums, start, end, target);
     }
 
+    /** template form NineChapter **/
     public static int binarySearch(int[] nums, int target) {
         if (nums == null || nums.length == 0) {
             return -1;
@@ -49,7 +103,7 @@ public class BinarySearch {
             int mid = start + (end - start) / 2;
             // 要点3：=, <, > 分开讨论，mid 不+1也不-1
             if (nums[mid] == target) {
-                return moveForward(nums, mid, target);
+                return mid;
             }
             if (nums[mid] < target) {
                 start = mid;
@@ -61,27 +115,16 @@ public class BinarySearch {
 
         // 要点4: 循环结束后，单独处理start和end
         if (nums[start] == target) {
-            return moveForward(nums, start, target);
+            return start;
         }
         if (nums[end] == target) {
-            return moveForward(nums, end, target);
+            return end;
         }
 
         return -1;
     }
 
-    public static int moveForward(int[] nums, int position, int target){
-        if (nums[position] == target) {
-            while (position - 1 >= 0){
-                if (nums[position - 1] != target) {
-                    break;
-                }
-                position--;
-            };
-        }
-        return position;
-    }
-
+    /** Naive code for findFirstPosition
     public static int findFirstPosition(int[] nums, int target) {
         if (nums == null || nums.length == 0) {
             return -1;
@@ -115,6 +158,19 @@ public class BinarySearch {
 
         return -1;
     }
+
+    public static int moveForward(int[] nums, int position, int target){
+        if (nums[position] == target) {
+            while (position - 1 >= 0){
+                if (nums[position - 1] != target) {
+                    break;
+                }
+                position--;
+            };
+        }
+        return position;
+    }
+    **/
 
 }
 
