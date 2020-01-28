@@ -6,6 +6,8 @@ public class SearchInABigSortedArray {
      * @param target: An integer
      * @return: An integer which is the first index of target.
      */
+
+    /** Solution
     public int searchBigSortedArray(ArrayReader reader, int target) {
 
         // write your code here
@@ -41,4 +43,5 @@ public class SearchInABigSortedArray {
         return -1;
 
     }
+     **/
 }
