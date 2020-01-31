@@ -19,3 +19,40 @@ public class Main {
  *  Set Map List Queue
  *
  * **/
+
+/**
+ * Definition of TreeNode:
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left, right;
+ *     public TreeNode(int val) {
+ *         this.val = val;
+ *         this.left = this.right = null;
+ *     }
+ * }
+ * BinaryTree
+ * Why using BFS serialized binary tree?
+ * - Because node number of each level is fixed, use BFS first element is rood,
+ *   second and third is second level and so on.
+ *     1
+ *    / \
+ *   2   3
+ *  / \   \
+ * 4   5   6
+ *    / \
+ *   7   8
+ *   {1,2,3,4,5,#,6,#,#,7,8}
+ *
+ * */
+
+/**
+ * Definition for Undirected graph.
+ * class UndirectedGraphNode {
+ *     int label;
+ *     List<UndirectedGraphNode> neighbors;
+ *     UndirectedGraphNode(int x) {
+ *         label = x;
+ *         neighbors = new ArrayList<UndirectedGraphNode>();
+ *     }
+ * }
+ */
