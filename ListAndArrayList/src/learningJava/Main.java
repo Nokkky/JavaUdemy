@@ -1,20 +1,15 @@
 package learningJava;
+
 import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Main {
 
-    private static Scanner scanner = new Scanner(System.in);
-
-    public static void main(String[] args) {
-	// write your code here
-        //ArrayList
-        ArrayList<String> myArrayList = new ArrayList<String>();
-        int position = 10;
-        myArrayList.get(0);
-
-
+    public static void main(String[] args){
+        String abc = "abc";
+        System.out.println(abc == "abc");
     }
+
 }
 //ArrayList
 // -- Can only use object/class can not use primitive type
