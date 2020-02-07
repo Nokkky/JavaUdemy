@@ -1,12 +1,10 @@
 package learningJava;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class BinaryTreeLevelOrderTraversal2_70 {
     /**
-     * @param root: A tree
+     * @param root : A tree
      * @return: buttom-up level order a list of lists of integer
      */
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
@@ -16,7 +14,7 @@ public class BinaryTreeLevelOrderTraversal2_70 {
         // store node as visited.
         // add node's children into queuee.
 
-        ArrayList reverseOrder = new ArrayList<ArrayList>();
+        List<List<Integer>> reverseOrder = new ArrayList<>();
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
 
         if (root == null){
