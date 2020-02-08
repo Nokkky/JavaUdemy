@@ -11,6 +11,9 @@ public class Main {
         System.out.println("Size is " + firstQueue.size());
         System.out.println(firstQueue.poll());
         System.out.println(firstQueue.empty());
+
+        boolean[][] init = new boolean[1][1];
+        System.out.println(init[0][0]);
     }
 }
 
