@@ -1,5 +1,7 @@
 package learningJava;
 
+import java.util.HashMap;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -10,6 +12,32 @@ public class Main {
         int number = Integer.parseInt(numberAsInteger);
         System.out.println("Number equal: " + number);
         printSquareStar(5);
+
+        String log = "10.223.157.186 - - [15/Jul/2009:15:50:51 -0700] \"GET /assets/css/960.css HTTP/1.1\" 304 -";
+        String log1 = log.replaceFirst("\\[", "");
+
+        String[] record = log.split(" ");
+
+        for(String iter: record){
+            System.out.println(iter);
+        }
+
+        record[3] = record[3].replaceFirst("\\[", "");
+        record[4] = record[4].replaceFirst("\\]", "");
+        System.out.println("--------");
+        for(String iter: record){
+            System.out.println(iter);
+        }
+
+        HashMap<String, Integer> hashmap = new HashMap<String, Integer>();
+        hashmap.put("111", 1);
+        hashmap.put("2222", 2);
+        for (String key : hashmap.keySet()){
+            if (hashmap.get(key) == 1){
+                System.out.println(key);
+                System.out.println(hashmap.get(key));
+            }
+        }
     }
 
     public static void printSquareStar(int number){
