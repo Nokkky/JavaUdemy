@@ -5,7 +5,7 @@ public class Main {
 
         int[] input = {2,3, 5};
         int amount = 7;
-        System.out.println(CoinChange.coinChange(input, amount));
+//        System.out.println(CoinChange.coinChange(input, amount));
     }
 }
 
